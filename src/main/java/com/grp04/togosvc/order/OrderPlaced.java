@@ -2,30 +2,17 @@ package com.grp04.togosvc.order;
 
 import java.util.Date;
 
-import javax.persistence.*;
-
-import org.springframework.beans.BeanUtils;
-
-@Entity
-@Table(name="Order_table")
-public class Order {
-    
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;    
+public class OrderPlaced extends AbstractEvent {
+    private Long id;
     private Long productId;
     private Long customerId;
     private String address;
     private Long orderQty;
     private Long planId;
     private Date returnDate;
-    private String orderStatus;
 
-
-    @PostPersist
-    public void onPostPersist(){
-        OrderPlaced orderPlaced = new OrderPlaced();
-        BeanUtils.copyProperties(this, orderPlaced);
-        orderPlaced.publishAfterCommit();
+    public OrderPlaced(){
+        super();
     }
 
     public Long getId() {
@@ -42,7 +29,6 @@ public class Order {
     public void setProductId(Long productId) {
         this.productId = productId;
     }
-
     public Long getCustomerId() {
         return customerId;
     }
@@ -77,12 +63,5 @@ public class Order {
 
     public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
-    }
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
     }
 }
