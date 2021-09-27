@@ -16,26 +16,27 @@ spec:
     spec:
       containers:
         - name: order
-          image: wooregi.azurecr.io/order:latest
+          # image: wooregi.azurecr.io/order:latest
+          image: hhak/order:latest
           resources:
             limits:
               memory: 512Mi
-              cpu: "1"
+              cpu: "2"
           ports:
             - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health/readiness'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health/liveness'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
+          # readinessProbe:
+          #   httpGet:
+          #     path: '/actuator/health'
+          #     port: 8080
+          #   initialDelaySeconds: 10
+          #   timeoutSeconds: 2
+          #   periodSeconds: 5
+          #   failureThreshold: 10
+          # livenessProbe:
+          #   httpGet:
+          #     path: '/actuator/health'
+          #     port: 8080
+          #   initialDelaySeconds: 120
+          #   timeoutSeconds: 2
+          #   periodSeconds: 5
+          #   failureThreshold: 5

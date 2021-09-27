@@ -63,3 +63,7 @@ spring:
         event-out:
           destination: com.grp04.togosvc
           contentType: application/json
+management:
+  endpoint:
+    health:
+      show-details: always

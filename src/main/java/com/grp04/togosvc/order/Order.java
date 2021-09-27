@@ -1,9 +1,7 @@
 package com.grp04.togosvc.order;
 
 import java.util.Date;
-
 import javax.persistence.*;
-
 import org.springframework.beans.BeanUtils;
 
 @Entity
@@ -26,6 +24,8 @@ public class Order {
         OrderPlaced orderPlaced = new OrderPlaced();
         BeanUtils.copyProperties(this, orderPlaced);
         orderPlaced.publishAfterCommit();
+
+        System.out.println("\n\n##### Order: Order " + this.id + " placed. Delivery will start.\n\n");
     }
 
     public Long getId() {
