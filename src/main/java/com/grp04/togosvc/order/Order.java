@@ -36,6 +36,7 @@ public class Order {
     @PostUpdate
     public void onPostUpdate(){
         ReturnRequested returnRequested = new ReturnRequested();
+        System.out.println("test for ci/cd");
         BeanUtils.copyProperties(this, returnRequested);
         returnRequested.publishAfterCommit();
     }
