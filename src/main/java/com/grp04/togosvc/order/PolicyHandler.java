@@ -6,7 +6,7 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service 
 public class PolicyHandler {
     private OrderRepository orderRepository;
     
