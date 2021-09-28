@@ -1,7 +1,5 @@
 package com.grp04.togosvc.order;
 
-import java.util.List;
-
 import com.grp04.togosvc.order.kafka.KafkaProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
