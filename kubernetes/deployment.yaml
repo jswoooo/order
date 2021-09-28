@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
         - name: order
-          image: skuser12.azurecr.io/order:latest
+          image: user123.azurecr.io/order:latest
           # image: hhak/order:latest
-          resources:
-            limits:
-              memory: 512Mi
-              cpu: "2"
+          # resources:
+          #   limits:
+          #     memory: 512Mi
+          #     cpu: "2"
           ports:
             - containerPort: 8080
           readinessProbe:
